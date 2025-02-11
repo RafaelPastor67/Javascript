@@ -22,9 +22,12 @@ botao.addEventListener('click', () => {
             paragrafo.innerText = `${usuarios.join(' e ')} curtiram`;
         }
         else if(usuarios.length > 2){
-            paragrafo.innerText = `${usuarios[0]} , ${usuarios[1]}  e mais ${usuarios.length - 2} curtiram`;
+            paragrafo.innerText = `${usuarios[0]}, ${usuarios[1]}  e mais ${usuarios.length - 2} curtiram`;
         }
     }
+    }
+    else{
+        alert('Digite um nome')
     }
 })
 
