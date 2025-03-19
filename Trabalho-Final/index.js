@@ -10,7 +10,9 @@ const confirm_button = document.querySelector('.confirm-button')
 const darkSwitch = document.querySelector('.switch')
 const ball = document.querySelector('.ball')
 const body = document.querySelector('body')
+const lixeira = document.querySelector('.bxs-trash')
 let contadorPost;
+
 
 username.value = JSON.parse(localStorage.getItem("username"))
 let ArmazenaPosts = JSON.parse(localStorage.getItem("lSPost")) || [];
@@ -21,6 +23,14 @@ if(ArmazenaPosts.length){
 else{
     contadorPost = 0
 }
+
+/////Deletar Feed
+function deletarFeed(){
+    localStorage.removeItem("lSPost");
+    location.reload();
+}
+lixeira.addEventListener('click',deletarFeed)
+/////
 ///////////////////////////////////////////////////////Resgata tema do LocalStorage
 function carregarTemaGeral(){
     const isLightTheme = localStorage.getItem('theme') === 'light';
@@ -28,17 +38,20 @@ function carregarTemaGeral(){
         ball.classList.add('active');
         body.classList.add('white');
         input.classList.add('white');
+        darkSwitch.classList.add('white');
+
     } else {
         ball.classList.remove('active');
         body.classList.remove('white');
         input.classList.remove('white');
+        darkSwitch.classList.remove('white');
     }
 }
 darkSwitch.addEventListener('click', ()=> {
     ball.classList.toggle('active');
     body.classList.toggle('white');
     input.classList.toggle('white');
-
+    darkSwitch.classList.toggle('white');
     if (ball.classList.contains('active')) {
         localStorage.setItem('theme', 'light');
     } else {
@@ -73,6 +86,12 @@ let isDragging = false;
 let offsetX, offsetY;
 
 popup.addEventListener("mousedown", (e) => {
+
+    // Verifica se o clique é em um botão, input ou imagem
+    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT' || e.target.tagName === 'IMG') {
+        return; // Não deixar arrastar
+    }
+
     isDragging = true;
     offsetX = e.clientX - popup.getBoundingClientRect().left;
     offsetY = e.clientY - popup.getBoundingClientRect().top;
@@ -81,14 +100,40 @@ popup.addEventListener("mousedown", (e) => {
 
 document.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
-    popup.style.left = `${e.clientX - offsetX}px`;
-    popup.style.top = `${e.clientY - offsetY}px`;
+
+    let newX = e.clientX - offsetX;
+    let newY = e.clientY - offsetY;
+
+    // Nao deixa Que o pop up sair da tela toda
+    const maxX = window.innerWidth - popup.offsetWidth / 2; // Permite que metade do popup saia
+    const maxY = window.innerHeight - popup.offsetHeight / 2; // Permitir que metade do popup saia
+
+    // Impedir que o popup saia completamente da tela
+    newX = Math.max(-popup.offsetWidth / 2, Math.min(newX, maxX));
+    newY = Math.max(-popup.offsetHeight / 2, Math.min(newY, maxY));
+
+    popup.style.left = `${newX}px`;
+    popup.style.top = `${newY}px`;
 });
 
 document.addEventListener("mouseup", () => {
     isDragging = false;
     popup.style.cursor = "default";
 });
+//Quando abrir no Mobile essa funçao vai deixar o popup no lugar certo
+function checkScreenSize() {
+    if (window.innerWidth <= 768) {
+      popup.style.position = 'absolute'; // Garante que o popup seja posicionado corretamente
+      popup.style.left = '0'; // Posiciona o popup à esquerda
+    } else {
+
+      popup.style.position = ''; // Reseta o estilo
+      popup.style.left = ''; // Reseta o estilo
+    }
+  }
+  
+checkScreenSize()
+window.addEventListener('resize', checkScreenSize);
 
 ////////////////////////////////////////criar Postagem
 function criarPostagem(postagem){
@@ -207,6 +252,7 @@ function carregarTema(){
         coraçao.classList.add('light')
         time.classList.add('light')
         
+        
     }
 }
 document.addEventListener("DOMContentLoaded", carregarTema())
@@ -234,6 +280,8 @@ criarPostagem(postResgatado[i])
 
 confirm_button.addEventListener("click", ()=> {
     localStorage.setItem("username",JSON.stringify(username.value))
+    popup.classList.remove("pop-up-on")
+    popup.classList.add("pop-up-off")
     
 })
 
@@ -315,7 +363,8 @@ botao_postar.addEventListener("click", ()=> {
 
             
         
-        input.value = ""    
+        input.value = ""
+        input.style.height = "auto";    
     }
       
     buscarGato()
@@ -323,8 +372,3 @@ botao_postar.addEventListener("click", ()=> {
     
     }
 })
-
-
-
-
-

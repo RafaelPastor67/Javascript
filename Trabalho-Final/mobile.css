@@ -1,0 +1,24 @@
+@media (max-width:768px){
+    
+    .timeline{
+        margin-top: 40px;
+        width: 100%;
+    }
+    header{
+        position: fixed;
+        top:0;
+        width: 100vw;
+        height: 55px;
+        backdrop-filter: blur(30px);
+        border-bottom: solid 1px rgb(204, 204, 204);
+    }
+
+
+    #edit{
+        width: 110%;
+    }
+    .user-confirm{
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -22,6 +22,7 @@ body.white{
     padding: 30px 10px 10px 20px ;
     border: solid 1px rgba(150, 149, 149, 0.507);
     border-radius: 10px;
+    word-wrap: break-word;
 }
 .timeline{
     width: 33%;
@@ -92,9 +93,10 @@ body.white{
 
 .pop-up-on{
     position: fixed;
-    width: 30vw;
-    height: 30vh;
-    background-color: rgb(0, 128, 158);
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(16, 187, 255, 0.288);
+    backdrop-filter: (5px);
     left: 30%;
     top: 20%;
     display: flex;
@@ -102,6 +104,7 @@ body.white{
     padding: 60px;
     border-radius: 15px;
     gap: 5%;
+    border: solid 1px rgba(150, 149, 149, 0.507);
 }
 .pop-up-off{
     display: none;
@@ -124,7 +127,7 @@ input{
     height: 42px;
 }
 .confirm-button{
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(27, 146, 175);
     color: white;
     border: none;
     border-radius: 10px;
@@ -133,21 +136,19 @@ input{
     width: 150px;
     height: 40px;
     font-family:'Arial';
-    box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
 }
 .x{
     position: absolute;
     font-size: 1.5em;
     color: white;
     cursor: pointer;
-    background-color: black;
-    width: 50px;
-    height: 50px;
+    background-color: rgb(179, 7, 7);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    top: 1%;
-    left: 1%;
+    top: 4%;
+    left: 2%;
     border: none;
-    box-shadow: white 1px 1px 3px;
 }
 .x:hover{
     color: rgb(56, 55, 55);
@@ -213,13 +214,16 @@ i{
 }
 #coracaoAntes:hover{
     color:rgb(214, 55, 55);
-    transition: 150ms;
-    
+    transition: 150ms;   
+}
+#coracaoAntes:active{
+    transform: scale(1.2);
+    color: rgb(233, 19, 19);
+    transition: 150ms;   
 }
 .curtida>p{
     color: rgb(204, 204, 204);
     margin-bottom: 3px;
-
 }
 .date{
     font-size: 0.8em;
@@ -231,15 +235,16 @@ i{
 .switch{
     left: 40px;
     top: 20px;
-    position: relative;
+    position: fixed;
     width: 50px;
     height: 25px;
     border-radius: 15px;
-    background-color: aliceblue;
+    background-color: rgb(207, 207, 207);
     cursor: pointer;
 }
 .switch.white{
-    background-color: black;
+    transition:300ms;
+    background-color: rgb(65, 64, 64);
 }
 .ball{
     width: 20px;
@@ -262,4 +267,11 @@ i{
 .user-curtiu{
     margin-left: 20px;
     font-weight: 600;
+}
+
+.bxs-trash{
+    color: rgb(146, 16, 16);
+    position: fixed;
+    top:20px;
+    left: 80% ;  
 }
