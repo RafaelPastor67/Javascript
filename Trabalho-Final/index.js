@@ -131,7 +131,7 @@ function checkScreenSize() {
       popup.style.left = ''; // Reseta o estilo
     }
   }
-  
+
 checkScreenSize()
 window.addEventListener('resize', checkScreenSize);
 
@@ -322,7 +322,7 @@ function dataHora(postagem){
 botao_postar.addEventListener("click", ()=> {
     
     if (JSON.parse(localStorage.getItem("username")) == null|| JSON.parse(localStorage.getItem("username")) == ""){
-        alert("Por favor, insira um nome de usuário antes de postar.");
+        alert("Por favor, insira um nome de usuário antes de postar. Clique na foto de Perfil para abrir o menu para definir usuario");
         return;
     }
 
