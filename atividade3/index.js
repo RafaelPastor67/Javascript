@@ -1,5 +1,5 @@
 // Data Futura
-const dataFutura = new Date('2025-12-25T00:00:00').getTime();
+const dataFutura = new Date('2026-02-11T00:00:00').getTime();
 
 
 function  calcularTempoRestante(dataFutura){

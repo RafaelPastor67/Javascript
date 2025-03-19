@@ -1,0 +1,265 @@
+
+body{
+    background-color: black;
+    color: azure;
+    overflow-y: auto;
+    transition: 300ms;
+
+}
+body.white{
+    transition: 300ms;
+
+    background-color: white;
+    color: black;
+}
+.flex{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post>*,.cabeçalho{
+    padding: 30px 10px 10px 20px ;
+    border: solid 1px rgba(150, 149, 149, 0.507);
+    border-radius: 10px;
+}
+.timeline{
+    width: 33%;
+}
+.user img{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: white;
+    padding: 6px;
+    cursor: pointer;
+}
+.input{
+    transition: 300ms;
+
+    background-color: black;
+    border: none;
+    font-size: 1.5em;
+    color: white;
+    width: 90%;
+    font-family: Arial, Helvetica, sans-serif;
+    height: auto;
+    resize:none;
+}
+.input.white{
+    background-color: white;
+    color: black;
+    transition: 300ms;
+
+}
+.input:focus{
+    outline: none;
+}
+.user-post{
+    display: flex;
+    gap: 10px;
+}
+/*.cabeçalho{
+
+    
+}*/
+#post{
+    background-color: rgb(6, 147, 182);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3em;
+    cursor: pointer;
+    width: 90px;
+    height: 40px;
+    font-family:'Arial';
+    box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+}
+#post:active{
+    background-color: rgb(0, 128, 158);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+#post:hover{
+    background-color: rgb(0, 128, 158);
+    transition: 150ms;
+}
+
+.botao-postar{
+    display: flex;
+    justify-content: end;
+    margin: 10px 10px 5px 0;
+}
+
+.pop-up-on{
+    position: fixed;
+    width: 30vw;
+    height: 30vh;
+    background-color: rgb(0, 128, 158);
+    left: 30%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    border-radius: 15px;
+    gap: 5%;
+}
+.pop-up-off{
+    display: none;
+}
+input{
+    height: 2rem;
+    width: 60%;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+}
+.user-full .user-img{
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    padding: 6px;
+    
+}
+#user{
+    height: 42px;
+}
+.confirm-button{
+    background-color: rgb(15, 15, 15);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3em;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    font-family:'Arial';
+    box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+}
+.x{
+    position: absolute;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 1%;
+    left: 1%;
+    border: none;
+    box-shadow: white 1px 1px 3px;
+}
+.x:hover{
+    color: rgb(56, 55, 55);
+    color: white;
+}
+.x:active{
+    box-shadow: 0 0 0;
+}
+#edit{
+    font-size: 1.5em;
+}
+.pfp{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.pfp_and_name>p{
+margin: 4px;
+font-weight: 600;
+}
+
+.postagem{
+    padding: 10px ;
+    font-family:'Arial'
+    
+}
+.pfp_and_name{
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+}
+.content{
+    margin: 10px 20px;
+}
+.imgGatinho{
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    max-height: 40vh;
+}
+.actions{
+    display: flex;
+    height: 40px;
+    margin-left: 20px;
+}
+.curtida{
+    display: flex;
+    gap: 10px;
+    height: 30px;
+    
+}
+.curtida>p.light,.bx-heart.light{
+    color: rgb(131, 129, 129);
+}
+i{
+    font-size: 30px;
+    cursor: pointer;
+}
+.bx-heart{
+    color: rgb(204, 204, 204);  
+    width: 30px;
+    height: 30px;
+}
+#coracaoAntes:hover{
+    color:rgb(214, 55, 55);
+    transition: 150ms;
+    
+}
+.curtida>p{
+    color: rgb(204, 204, 204);
+    margin-bottom: 3px;
+
+}
+.date{
+    font-size: 0.8em;
+    color: rgb(204, 204, 204);
+}
+.date.light{
+    color: rgb(131, 129, 129);
+}
+.switch{
+    left: 40px;
+    top: 20px;
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+.switch.white{
+    background-color: black;
+}
+.ball{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(0, 128, 158);
+    position: absolute;
+    top: 2.5px;
+    left: 27.5px;
+    transition: 500ms;
+}
+.ball.active{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+}
+.user-curtiu{
+    margin-left: 20px;
+    font-weight: 600;
+}

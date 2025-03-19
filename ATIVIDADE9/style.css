@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+
+    margin: 0;
+    background-color: rgb(80, 91, 145);
+}
+header{
+margin-top: 40px;
+display: flex;
+justify-content: center;
+width: 100%;
+}
+
+input{
+margin-right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+button{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(248, 248, 248);
+    color: black;
+    cursor: pointer;
+    box-shadow: 1px 3px 7px black;
+}
+input{
+    font-family: "Atkinson Hyperlegible Next", serif;
+    font-size: 1.2em;
+    width: 25%;
+}
+button:hover{
+    background-color: rgb(185, 185, 185);
+    transition: 400ms;
+}
+button:active{
+    box-shadow: 0px 0px 0px;
+    transition: 0ms;
+    background-color:rgb(207, 206, 206); ;
+}
